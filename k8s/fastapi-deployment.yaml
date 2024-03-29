@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi
+        image: your-username/fastapi-image:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DB_NAME
+          value: embeddings_db
+        - name: DB_USER
+          value: anas
+        - name: DB_PASSWORD
+          value: dba
+        - name: DB_HOST
+          value: postgres
+        - name: DB_PORT
+          value: "5432"
