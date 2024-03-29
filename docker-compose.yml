@@ -1,0 +1,39 @@
+
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      DB_NAME: embeddings_db
+      DB_USER: anas
+      DB_PASSWORD: dba
+      DB_HOST: postgres
+      DB_PORT: 5432
+    networks:
+      - mynetwork
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: anas
+      POSTGRES_PASSWORD: dba
+      POSTGRES_DB: embeddings_db
+#      POSTGRES_EXTENSIONS: pgvector
+    networks:
+      - mynetwork
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  postgres_data:

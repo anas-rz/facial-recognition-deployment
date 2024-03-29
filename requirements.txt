@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+deepface
+psycopg2-binary
+pgvector
+python-multipart
