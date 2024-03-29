@@ -27,7 +27,7 @@ Before running the application, ensure you have the following installed:
 
    ```bash
    git clone https://github.com/anas-rz/facial-recognition-deployment.git
-   cd fastapi-postgres-pgvector
+   cd facial-recognition-deployment
 
 2. Build and start the Docker containers:
 
