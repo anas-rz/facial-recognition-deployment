@@ -5,6 +5,7 @@ from pgvector.psycopg2 import register_vector
 from deepface import DeepFace
 from PIL import Image
 import io
+import os
 
 app = FastAPI()
 
@@ -12,7 +13,7 @@ app = FastAPI()
 DB_NAME = 'embeddings_db'
 DB_USER = 'anas'
 DB_PASSWORD = 'dba'
-DB_HOST = 'postgres'
+DB_HOST = os.environ['DB_HOST']
 
 # Connect to database and register vector support
 conn = psycopg2.connect(database=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, port='5432')
