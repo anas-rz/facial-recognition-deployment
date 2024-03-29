@@ -1,5 +1,7 @@
 # Facial Recognition Deployment with PostgreSQL and `pgvector`
 
+![Deploying App](deploying-app.png)
+
 This repository contains code for deploying a FastAPI application that utilizes PostgreSQL as its database backend, with support for the pgvector extension for facial recognition. It includes functionality for extracting and saving facial embeddings to PostgreSQL, as well as comparing new embeddings to find the closest facial embeddings.
 
 ### Containerization and Persistent Storage
