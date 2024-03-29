@@ -1,10 +1,10 @@
 # Facial Recognition Deployment with PostgreSQL and `pgvector`
 
-This repository contains code for a FastAPI application that utilizes PostgreSQL as its database backend, with support for the pgvector extension for facial recognition. It includes extracting and saving facial embeddings to PostgreSQL as well as comparing new embeddings to find the closest facial embeddings. 
+This repository contains code for deploying a FastAPI application that utilizes PostgreSQL as its database backend, with support for the pgvector extension for facial recognition. It includes functionality for extracting and saving facial embeddings to PostgreSQL, as well as comparing new embeddings to find the closest facial embeddings.
 
 ### Containerization and Persistent Storage
 
-The application is containerized using Docker, allowing for easy deployment and scalability. Docker volumes are used to provide persistent storage, ensuring that data is retained even if containers are restarted or recreated. Additionally, the containers are connected via a Docker network, enabling seamless communication between different components of the application.
+The application is containerized using Docker, enabling easy deployment and scalability. Docker volumes are utilized to provide persistent storage, ensuring that data is retained even if containers are restarted or recreated. Additionally, the containers are connected via a Docker network, facilitating seamless communication between different components of the deployed application.
 
 ## Description
 
