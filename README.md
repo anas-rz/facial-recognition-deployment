@@ -65,7 +65,12 @@ This project is licensed under the MIT License.
 
 ## Acknowledgements
 FastAPI: [FastAPI](https://fastapi.tiangolo.com/) framework documentation.
+
 pgvector: [pgvector](https://github.com/ankane/pgvector) extension for PostgreSQL.
+
 psycopg2: [psycopg2](https://github.com/psycopg/psycopg2) PostgreSQL adapter for Python.
+
 Docker: [Docker](https://www.docker.com/) Containerization platform.
+
 DeepFace: [DeepFace](https://github.com/serengil/deepface) library for facial analysis.
+
