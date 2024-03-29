@@ -32,7 +32,7 @@ Before running the application, ensure you have the following installed:
 2. Build and start the Docker containers:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 3. Access the FastAPI application at http://localhost:8000.
 
