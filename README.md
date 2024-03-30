@@ -38,14 +38,16 @@ cd facial-recognition-deployment
 docker compose up -d
 ```
 
-##  Deploy with Kubernetes
+##  Deploy with Kubernetes on GKE
 1. Build the Docker Image
 
 `docker build -t gcr.io/[project]/image_name . `
 -   Replace [project] with your Google Cloud project ID.
 -   Replace image_name with the desired name for your image.
 2. Push the Image to Google Container Registry (GCR)
+
 `docker push gcr.io/[project]/image_name`
+
 3. Apply YAML Files
 
 ```
