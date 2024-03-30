@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: fastapi
-        image: your-username/fastapi-image:latest
+        image: <your-username/fastapi-image:latest>
         ports:
         - containerPort: 8000
         env:
