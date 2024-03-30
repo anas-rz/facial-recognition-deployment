@@ -8,6 +8,11 @@ This repository contains code for deploying a FastAPI application that utilizes 
 
 The application is containerized using Docker, enabling easy deployment and scalability. Docker volumes are utilized to provide persistent storage, ensuring that data is retained even if containers are restarted or recreated. Additionally, the containers are connected via a Docker network, facilitating seamless communication between different components of the deployed application.
 
+
+In the Kubernetes deployment, Persistent Volume Claim (PVC) is utilized to ensure that the storage is retained even if the pods are deleted. This provides data persistence and prevents data loss.
+
+To configure Persistent Volume Claim, we have included the following YAML file: [YAML](./k8s/postgres-pvc.yaml)
+
 ## Description
 
 The FastAPI application provides endpoints for various functionalities, including:
