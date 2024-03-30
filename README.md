@@ -63,6 +63,23 @@ docker compose up -d
 - Modify the FastAPI application code in main.py to add custom functionality as needed.
 - Update the Docker Compose file (docker-compose.yml) to configure additional services or settings.
 
+##  Deploy with Kubernetes
+1. Build the Docker Image
+
+`docker build -t gcr.io/[project]/image_name . `
+-   Replace [project] with your Google Cloud project ID.
+-   Replace image_name with the desired name for your image.
+-   Push the Image to Google Container Registry (GCR)
+`docker push gcr.io/[project]/image_name`
+3. Apply YAML Files
+
+```
+kubectl apply -f fastapi-deployment.yaml
+kubectl apply -f fastapi-service.yaml
+kubectl apply -f postgres-deployment.yaml
+kubectl apply -f postgres-pvc.yaml
+kubectl apply -f postgres-service.yaml 
+```
 ## License
 This project is licensed under the MIT License.
 
