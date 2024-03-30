@@ -1,6 +1,6 @@
 # Facial Recognition Deployment with PostgreSQL and `pgvector`
 
-![Deploying App](deploying-app.png)
+![Deploying App](images/deploying-app.png)
 
 This repository contains code for deploying a FastAPI application that utilizes PostgreSQL as its database backend, with support for the pgvector extension for facial recognition. It includes functionality for extracting and saving facial embeddings to PostgreSQL, as well as comparing new embeddings to find the closest facial embeddings.
 
@@ -47,7 +47,7 @@ docker compose up -d
     - For registering faces:
     
     ```bash
-    for file in images/*; do
+    for file in images/input_embeddings/*; do
         curl -X POST -F "file=@$file" -F "name=$(basename $file)" http://localhost:8000/embeddings
     done
     ```
@@ -55,10 +55,10 @@ docker compose up -d
     - For comparing faces:
     
     ```bash
-    curl -X POST -F "file=@shahid_test.jpeg" http://localhost:8000/embeddings/closest
+    curl -X POST -F "file=@images/test/shahid_test.jpeg" http://localhost:8000/embeddings/closest
     ```
     
-    Make sure to replace `shahid_test.jpeg` with the path to the image you want to compare.
+    Make sure to replace `images/test/shahid_test.jpeg` with the path to the image you want to compare.
 
 - Modify the FastAPI application code in main.py to add custom functionality as needed.
 - Update the Docker Compose file (docker-compose.yml) to configure additional services or settings.
@@ -69,7 +69,7 @@ docker compose up -d
 `docker build -t gcr.io/[project]/image_name . `
 -   Replace [project] with your Google Cloud project ID.
 -   Replace image_name with the desired name for your image.
--   Push the Image to Google Container Registry (GCR)
+2. Push the Image to Google Container Registry (GCR)
 `docker push gcr.io/[project]/image_name`
 3. Apply YAML Files
 
