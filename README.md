@@ -16,14 +16,13 @@ The FastAPI application provides endpoints for various functionalities, includin
 - Integration with the pgvector extension for vector-based operations.
 - Serving API endpoints for your application.
 
-## Prerequisites
+## Deploying with Docker Compose
 
 Before running the application, ensure you have the following installed:
 
 - Docker: [Installation Guide](https://docs.docker.com/get-docker/)
 - Docker Compose: [Installation Guide](https://docs.docker.com/compose/install/)
 
-## Getting Started
 
 1. Clone the repository:
 
@@ -39,7 +38,23 @@ cd facial-recognition-deployment
 docker compose up -d
 ```
 
+##  Deploy with Kubernetes
+1. Build the Docker Image
 
+`docker build -t gcr.io/[project]/image_name . `
+-   Replace [project] with your Google Cloud project ID.
+-   Replace image_name with the desired name for your image.
+2. Push the Image to Google Container Registry (GCR)
+`docker push gcr.io/[project]/image_name`
+3. Apply YAML Files
+
+```
+kubectl apply -f fastapi-deployment.yaml
+kubectl apply -f fastapi-service.yaml
+kubectl apply -f postgres-deployment.yaml
+kubectl apply -f postgres-pvc.yaml
+kubectl apply -f postgres-service.yaml 
+```
 
 ## Usage
 - Use the provided API endpoints to interact with the application.
@@ -62,24 +77,6 @@ docker compose up -d
 
 - Modify the FastAPI application code in main.py to add custom functionality as needed.
 - Update the Docker Compose file (docker-compose.yml) to configure additional services or settings.
-
-##  Deploy with Kubernetes
-1. Build the Docker Image
-
-`docker build -t gcr.io/[project]/image_name . `
--   Replace [project] with your Google Cloud project ID.
--   Replace image_name with the desired name for your image.
-2. Push the Image to Google Container Registry (GCR)
-`docker push gcr.io/[project]/image_name`
-3. Apply YAML Files
-
-```
-kubectl apply -f fastapi-deployment.yaml
-kubectl apply -f fastapi-service.yaml
-kubectl apply -f postgres-deployment.yaml
-kubectl apply -f postgres-pvc.yaml
-kubectl apply -f postgres-service.yaml 
-```
 ## License
 This project is licensed under the MIT License.
 
